@@ -1,6 +1,6 @@
 <template>
   <section class="mx-auto max-w-6xl px-3 py-3 xl:px-0 xl:py-0">
-    <div class="glass px-3 py-3 rounded-2xl">
+    <div class="glass px-3 py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500">
       <section class="grid grid-cols-6 gap-3">
         <div class="col-span-6 md:col-span-2 mx-6 my-6">
           <img
@@ -10,15 +10,15 @@
           />
         </div>
         <div class="col-span-6 md:col-span-4">
-          <h2 class="font-bold text-3xl text-black mt-12">
+          <h2 class="font-bold text-3xl text-white mt-12">
             Hier findest du alle Kategorien von Geek Wear
           </h2>
-          <p class="my-6 text-black">
+          <p class="my-6 text-white">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam
             voluptatum cupiditate veritatis in accusamus quisquam voluptatum
             cupiditate veritatis in accusamus quisquam.
           </p>
-          <section class="grid grid-cols-6 gap-3 text-black">
+          <section class="grid grid-cols-6 gap-3 text-white">
             <div
               v-for="category in computedCategories"
               :key="category.id"
@@ -28,7 +28,7 @@
                 :href="'/de/category/' + category.slug + '.html'"
                 class="flex items-center"
               >
-                <FontAwesomeIcon color="red" :icon="faCheckCircle" />
+                <FontAwesomeIcon color="white" :icon="faCheckCircle" />
                 <span class="ml-3">{{ category.name }}</span>
               </a>
             </div>
@@ -36,14 +36,14 @@
         </div>
       </section>
     </div>
-    <section class="grid grid-cols-6 gap-6 my-12">
-      <div class="col-span-6">
+    <section class="grid grid-cols-6 gap-6 gap-3 mt-3 bg-green-400 px-3 py-3 rounded-lg">
+      <div class="col-span-6" id="suche">
         <label class="floating-label">
           <span>Wonach suchst du ?</span>
           <input
-            type="text"
-            v-model="query"
-            class="input input-bordered input-primary w-full"
+              type="text"
+              v-model="query"
+              class="input input-bordered input-primary bg-blue-600 w-full"
           />
         </label>
       </div>
@@ -54,7 +54,7 @@
             class="font-bold text-lg"
           >
             <img
-              :src="'https://place-hold.it/760x240?text=' + category.slug"
+              :src="'https://place-hold.it/760x240?fontsize=64&text=' + category.slug"
               alt=""
           /></NuxtLink>
           <NuxtLink

@@ -12,22 +12,22 @@
 
     <nav class="flex items-center gap-6 mt-4 md:mt-0">
       <ul class="menu menu-horizontal bg-transparent p-0">
-        <li class="md:hidden">
-          <button class="text-white hover:bg-cyan-700 hover:text-white transition-colors">
-            <FontAwesomeIcon size="1x" :icon="faBars"/>
-            <span class="font-bold">Navigation</span>
-          </button>
-        </li>
-        <li>
+        <li class="">
           <a href="/de/search" class="text-white hover:bg-cyan-700 hover:text-white transition-colors">
             <FontAwesomeIcon size="1x" :icon="faMagnifyingGlass"/>
             <span class="font-bold">Suche</span>
           </a>
         </li>
         <li>
-          <a href="/de/categories" class="text-white hover:bg-cyan-700 hover:text-white transition-colors">
+          <a href="/de/categories#suche" class="text-white hover:bg-cyan-700 hover:text-white transition-colors">
             <FontAwesomeIcon size="1x" :icon="faBoxes"/>
             <span class="font-bold">Kategorien</span>
+          </a>
+        </li>
+        <li v-for="item in navigation" class="hidden lg:flex">
+          <a href="/de/categories" class="text-white hover:bg-cyan-700 hover:text-white transition-colors">
+            <FontAwesomeIcon size="1x" :icon="item.icon"/>
+            <span class="font-bold">{{item.label}}</span>
           </a>
         </li>
       </ul>
@@ -37,5 +37,12 @@
 
 <script setup lang="ts">
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
-import {faMagnifyingGlass, faBoxes, faBars} from '@fortawesome/free-solid-svg-icons'
+import {faMagnifyingGlass, faBoxes} from '@fortawesome/free-solid-svg-icons'
+
+const navigation = ref([
+  { "label": "Developer", "icon": ['fas', 'code'] },
+  { "label": "Bowling", "icon": ['fas', 'bowling-ball'] },
+  { "label": "Dart", "icon": ['fab', 'dart-lang'] },
+  { "label": "Geek", "icon": ['fas', 'glasses'] },
+]);
 </script>
