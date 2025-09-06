@@ -1,0 +1,34 @@
+<template>
+  <section class="page min-h-screen" data-theme="light">
+    <header>
+      <Header/>
+    </header>
+    <main class="mx-auto max-w-6xl min-h-screen px-3 2xl:px-0">
+      <Messages/>
+      <Breadcrumb/>
+      <CookieBanner/>
+      <BackToTop/>
+      <slot/>
+    </main>
+    <footer>
+      <Footer/>
+    </footer>
+  </section>
+</template>
+<script setup lang="ts">
+import "../main.css";
+</script>
+
+<style scoped>
+.page {
+  background: radial-gradient(black 3px, transparent 4px),
+  radial-gradient(black 3px, transparent 4px),
+  linear-gradient(#fff 4px, transparent 0),
+  linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+  linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+  #fff;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+</style>
+
