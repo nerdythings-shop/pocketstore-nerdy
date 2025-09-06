@@ -6,7 +6,7 @@
         <input type="search" v-model="query" class="input w-full" />
       </label>
     </div>
-    <div v-for="item in 6" class="col-span-6 xs:col-span-3">
+    <div v-for="item in 6" class="col-span-6 xs:col-span-3 md:col-span-2">
       <div class="card shadow-sm bg-gray-300">
         <figure>
           <img
@@ -31,9 +31,11 @@ import {addBreadcrumb} from '@/util/breadcrumbs'
 
 const query = ref('');
 
+// TODO fetch products from pocketbase
+
 onMounted(()=>{
   addBreadcrumb({
-    label: 'Search',
+    label: 'search',
     icon: 'magnifying-glass',
     link: 'search',
   });
