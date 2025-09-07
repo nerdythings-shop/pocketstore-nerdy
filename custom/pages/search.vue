@@ -3,41 +3,59 @@
     <div class="col-span-6 px-3 py-3 bg-red-400">
       <label class="floating-label">
         <span>Wonach suchst du ?</span>
-        <input type="search" v-model="query" class="input w-full" />
+        <input type="search" v-model="query" class="input w-full"/>
       </label>
     </div>
-    <div v-for="item in 6" class="col-span-6 xs:col-span-3 md:col-span-2">
-      <div class="card shadow-sm bg-gray-300">
-        <figure>
-          <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes" />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Card Title</h2>
-          <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
-      </div>
+    <div v-for="item in filtered" class="col-span-6 xs:col-span-3 md:col-span-2">
+      <ProductCard :identifier="item.id"/>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import ProductCard from "@/components/catalog/ProductCard.vue";
+import {ref, computed, watch} from 'vue'
 import {addBreadcrumb} from '@/util/breadcrumbs'
+import {usePocketBase} from '@/util/pocketbase'
+import type PocketBase from 'pocketbase'
 
+const {t} = useI18n();
 const query = ref('');
+const pb: PocketBase = usePocketBase();
+const products = ref([]);
+const filtered = computed(() => {
+  return products.value.filter((item: PocketBase) => {
+    return item;
+  })
+});
 
-// TODO fetch products from pocketbase
+const load = async () => {
+  pb.autoCancellation(false);
+  products.value = (await pb.collection('products').getList(1, 10, {
+    sort: '-created',
+    filter: 'name ~ "' + query.value + '"'
+  })).items.slice(0, 6);
+}
 
-onMounted(()=>{
+watch(query, load);
+
+onMounted(async () => {
   addBreadcrumb({
     label: 'search',
     icon: 'magnifying-glass',
     link: 'search',
+  });
+
+  load();
+
+  useHead({
+    title: 'Suche - ' + t('general.title'),
+    meta: [
+      {
+        name: 'description',
+        content: t('general.description'),
+      }
+    ]
   });
 });
 </script>
