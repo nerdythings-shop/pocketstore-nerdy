@@ -1,0 +1,16 @@
+{
+    "name": "NerdyThings.shop",
+    "short_name": "NerdyThings",
+    "description": "My Awesome Nuxt 3 Application for NerdyThings",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000",
+    "theme_color": "#1f6fed",
+    "icons": [
+        {
+            "src": "/nerdy-logo-symbol.svg",
+            "sizes": "512x512",
+            "type": "image/svg-xml"
+        }
+    ]
+}
