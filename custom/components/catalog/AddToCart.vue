@@ -52,6 +52,7 @@ const addToCart = async (id, qty = 1) => {
   }
   navigator.serviceWorker.ready.then((registration) => {
     registration.showNotification("NerdyThings.shop", {
+      silent: false,
       icon: '/nerdy-logo-symbol.svg',
       body: 'Produkt zum Warenkorb hinzugefügt: ' + existingItem.id + ' => Anzahl: ' + qty,
     });
