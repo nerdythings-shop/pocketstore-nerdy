@@ -51,13 +51,13 @@ const addToCart = async (id, qty = 1) => {
     cart.value[index].qty = qty;
   }
   navigator.serviceWorker.ready.then((registration) => {
-    registration.showNotification("Vibration Sample", {
-      body: "Buzz! Buzz!",
-      tag: "vibration-sample",
+    registration.showNotification("NerdyThings.shop", {
+      icon: '/nerdy-logo-symbol.png',
+      body: 'Produkt zum Warenkorb hinzugefügt: ' + existingItem.id + ' => Anzahl: ' + qty,
     });
     if ("vibrate" in navigator) {
       // Vibrate for 200ms
-      navigator.vibrate([500, 250, 500, 250, 500, 250, 500]);
+      navigator.vibrate([200, 100, 200, 100, 200, 100, 200]);
     }
   });
   // TOOD mobile push message
