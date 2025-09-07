@@ -27,7 +27,7 @@ import {onMounted} from "vue";
 const {product} = defineProps({
   product: {
     type: Object,
-    requiered: true,
+    required: true,
   },
 });
 
