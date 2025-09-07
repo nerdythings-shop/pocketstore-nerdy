@@ -30,6 +30,12 @@
             <span class="font-bold">{{item.label}}</span>
           </a>
         </li>
+        <li>
+          <a href="/de/checkout" class="text-white hover:bg-cyan-700 hover:text-white transition-colors">
+            <FontAwesomeIcon size="1x" :icon="faShoppingCart"/>
+            <span class="font-bold">Warenkorb</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -37,7 +43,7 @@
 
 <script setup lang="ts">
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
-import {faMagnifyingGlass, faBoxes} from '@fortawesome/free-solid-svg-icons'
+import {faMagnifyingGlass, faBoxes, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 
 const navigation = ref([
   { "label": "Developer", "icon": ['fas', 'code'] },
