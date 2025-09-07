@@ -50,10 +50,12 @@ const addToCart = async (id, qty = 1) => {
     const index = cart.value.findIndex(toast => toast.id === existingItem.id);
     cart.value[index].qty = qty;
   }
-  Notification.requestPermission().then(permission => {
-    if (permission === "granted") {
-      new Notification("Hello from mobile!");
-    }
+  navigator.serviceWorker.ready.then((registration) => {
+    registration.showNotification("Vibration Sample", {
+      body: "Buzz! Buzz!",
+      vibrate: [200, 100, 200, 100, 200, 100, 200],
+      tag: "vibration-sample",
+    });
   });
   // TOOD mobile push message
   addToast('Produkt zum Warenkorb hinzugefügt: ' + existingItem.id + ' => Anzahl: ' + qty, 'success');
