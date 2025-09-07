@@ -5,7 +5,7 @@
         <div class="col-span-6 md:col-span-2 mx-6 my-6">
           <img
             class="rounded-2xl w-[100vh]"
-            src="https://place-hold.it/1000x1000"
+            src="https://place-hold.it/1000x1000?fontsize=64"
             alt=""
           />
         </div>
@@ -74,7 +74,7 @@
 
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faCheckCircle, faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { watch } from "vue";
 import { usePocketBase } from "@/util/pocketbase";
 const localePath = useLocalePath();
