@@ -53,9 +53,12 @@ const addToCart = async (id, qty = 1) => {
   navigator.serviceWorker.ready.then((registration) => {
     registration.showNotification("Vibration Sample", {
       body: "Buzz! Buzz!",
-      vibrate: [200, 100, 200, 100, 200, 100, 200],
       tag: "vibration-sample",
     });
+    if ("vibrate" in navigator) {
+      // Vibrate for 200ms
+      navigator.vibrate([200, 100, 200, 100, 200, 100, 200]);
+    }
   });
   // TOOD mobile push message
   addToast('Produkt zum Warenkorb hinzugefügt: ' + existingItem.id + ' => Anzahl: ' + qty, 'success');
