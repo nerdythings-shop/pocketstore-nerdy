@@ -3,7 +3,7 @@
   "name": "NerdyThings",
   "icons": [
     {
-      "src": "/public/nerdy-logo-symbol.svg",
+      "src": "/nerdy-logo-symbol.svg",
       "type": "image/svg+xml",
       "sizes": "512x512"
     }
