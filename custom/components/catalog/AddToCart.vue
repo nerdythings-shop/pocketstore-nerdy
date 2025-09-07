@@ -57,7 +57,7 @@ const addToCart = async (id, qty = 1) => {
     });
     if ("vibrate" in navigator) {
       // Vibrate for 200ms
-      navigator.vibrate([2000, 1000, 2000, 1000, 2000, 1000, 2000]);
+      navigator.vibrate([500, 250, 500, 250, 500, 250, 500]);
     }
   });
   // TOOD mobile push message
