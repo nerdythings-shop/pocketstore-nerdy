@@ -76,7 +76,7 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { watch } from "vue";
-import { usePocketBase } from "@/util/pocketbase";
+import { usePocketBase } from "@/utils/pocketbase";
 const localePath = useLocalePath();
 const { t } = useI18n();
 

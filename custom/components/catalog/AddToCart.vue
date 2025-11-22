@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import {useLocalStorage} from "@vueuse/core";
-import {addToast} from "@/util/toast";
+import {addToast} from "@/utils/toast";
 import {onMounted} from "vue";
 
 const {product} = defineProps({
