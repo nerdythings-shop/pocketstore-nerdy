@@ -85,9 +85,9 @@
   },
   {
     "version": "latest",
-    "name": "homepage-demo",
-    "vendor": "pocketstore-io",
-    "revision": "7d68e6e094a021b890d92a2ce62a4932c185c05f"
+    "name": "homepage-nerdy",
+    "vendor": "nerdythings-shop",
+    "revision": "3cc87569d163855105d68b7fb828ae0756497972"
   },
   {
     "version": "latest",
@@ -106,5 +106,17 @@
     "name": "hello-world",
     "vendor": "pocketstore-io",
     "revision": "0.0.1.2"
+  },
+  {
+    "version": "latest",
+    "name": "image-slider",
+    "vendor": "pocketstore-io",
+    "revision": "22771aa0c2bed1423002d71634dfcb19915f0011"
+  },
+  {
+    "version": "latest",
+    "name": "product-reviews",
+    "vendor": "pocketstore-io",
+    "revision": "42a4a5dd093989f9edb13635f5cea7e17cc13528"
   }
 ]
